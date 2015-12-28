@@ -1,7 +1,8 @@
 <%= simple_form_for(@info_request) do |f| %>
 
   <div class="col-md-8 col-md-offset-2">
-    <%= f.association :program, label: "Nombre del programa" %>
+<!--    <%= f.association :program, label: "Nombre del programa" %>-->
+    <%= f.association :program, :collection => Program.where(:active => true), label: "Nombre del programa" %>
     <%= f.input :name, label: "Nombre" %>
     <%= f.input :surname, label: "Apellido paterno" %>
     <%= f.input :second_surname, label: "Apellido materno" %>

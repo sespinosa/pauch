@@ -6,7 +6,7 @@
       <div class='col-md-12 text-center'>
         <h4>Para comenzar seleccione el programa al que desea postular</h4>
       </div>
-      <%= f.association :program, label: "Nombre del programa" %>
+      <%= f.association :program, :collection => Program.where(:active => true), label: "Nombre del programa" %>
       <button class='pull-right btn btn-success next-step'>Siguiente</button>
     </div>
     <div class='step-panel' data-step=2>
