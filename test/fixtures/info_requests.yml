@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  program_id: 
+  name: MyString
+  surname: MyString
+  second_surname: MyString
+  rut: MyString
+  observations: MyText
+  find_out_id: 
+
+two:
+  program_id: 
+  name: MyString
+  surname: MyString
+  second_surname: MyString
+  rut: MyString
+  observations: MyText
+  find_out_id: 

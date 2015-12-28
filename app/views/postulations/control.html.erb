@@ -1,0 +1,18 @@
+<div class='col-md-12'>
+  <h2> Modificar datos de control </h2>
+</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-6'>
+  <%= simple_form_for(@postulation) do |f| %>
+  <%= f.input :folder_delivery, as: :date, start_year: Date.today.year, end_year: Date.today.year - 2, label: "Fecha de entrega de carpeta", :include_blank => true %>
+  <%= f.input :interview, as: :date, start_year: Date.today.year, end_year: Date.today.year - 2, label: "Fecha entrevista", :include_blank => true %>
+  <%= f.input :postulation_status, collection: {'PENDIENTE' => 0, 'ACEPTADO' => 1, 'RECHAZADO' => 2}, label: 'Estado postulacion' %>
+  <%= f.input :enrollment_status, collection: {'PENDIENTE' => 0, 'ACEPTADO' => 1, 'RECHAZADO' => 2}, label: 'Estado matricula' %>
+  <%= f.input :tuition_status, collection: {'PENDIENTE' => 0, 'ACEPTADO' => 1, 'RECHAZADO' => 2}, label: 'Estado pago arancel' %>
+  <%= f.input :intern_observations, label: 'Observaciones internas' %>
+</div>
+<div class="row col-md-5 col-md-offset-2">
+  <%= f.button :submit, "Actualizar datos de control" %>
+</div>
+
+<% end %>

@@ -1,0 +1,42 @@
+<div class='col-md-12'>
+  <h4> Programa: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @info_request.program.try(:name) %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Nombre: </h4>
+</div>
+<div class='col-md-12'>
+  <%= "#{@info_request.name} #{@info_request.surname} #{@info_request.second_surname}" %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Rut: </h4>
+</div>
+<div class='col-md-12'>
+   <%= @info_request.rut %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Observaciones: </h4>
+</div>
+<div class='col-md-12'>
+   <%= @info_request.observations %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Como se entero del programa: </h4>
+</div>
+<div class='col-md-12'>
+  <% @info_request.find_outs.map do |fo| %>
+  <div class='col-md-12'><%= fo.try(:name) %></div>
+  <% end %>
+</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-12'>
+  <a href='/info_requests'><button class='btn btn-default'>Volver</button></a>
+</div>
+<!--<%= link_to 'Edit', edit_info_request_path(@info_request) %> |-->
+<!--<%= link_to 'Volver', info_requests_path %>-->

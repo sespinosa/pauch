@@ -1,0 +1,23 @@
+<div class='col-md-12 col-sm-12'>
+  <h1>Solicitudes de información</h1>
+  <table class='table' id="info-request-table" data-source="<%= info_requests_path(format: :json) %>">
+    <thead>
+      <tr>
+        <th>Programa</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rut</th>
+        <th>Comentarios</th>
+        <th>Como se entero</th>
+        <th>Obs. Interna</th>
+        <% if current_user.has_role? :admin %>
+        <th>Opciones</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
+<!--<%= link_to 'New Info request', new_info_request_path %>-->

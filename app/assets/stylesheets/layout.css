@@ -1,0 +1,105 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #F8F1EE;
+/*
+  background-image: url("/assets/BackUCh2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+*/
+}
+
+.not-valid {
+  background-color: rgba(255, 0, 0, 0.14);
+}
+
+.spacer50 {
+  height: 50px;
+}
+.spacer25 {
+  height: 25x;
+}
+ol.progtrckr {
+  display: table;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+ol.progtrckr li {
+  display: table-cell;
+  text-align: center;
+  line-height: 3em;
+}
+
+ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+ol.progtrckr li.progtrckr-done {
+  color: black;
+  border-bottom: 4px solid #ec008c;
+}
+ol.progtrckr li.progtrckr-todo {
+  color: #6f6f6f; 
+  border-bottom: 4px solid #6f6f6f;
+}
+
+ol.progtrckr li:after {
+  content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+  position: relative;
+  bottom: -2.5em;
+  float: left;
+  left: 50%;
+  line-height: 1em;
+}
+ol.progtrckr li.progtrckr-done:before {
+  content: "\2713";
+  color: "F5EFEC";
+  background-color: #ec008c;
+  height: 1.2em;
+  width: 1.2em;
+  line-height: 1.2em;
+  border: none;
+  border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-todo:before {
+  content: "\039F";
+  color: #6f6f6f;
+  background-color: "F5EFEC";
+  font-size: 1.5em;
+  bottom: -1.6em;
+}
+
+.cuadro-descarga {
+  border: solid 1px #428bca;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.texto-landing {
+  border: solid 1px #428bca;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.tabla-final {
+  border: solid 1px #428bca;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}

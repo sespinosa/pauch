@@ -1,0 +1,32 @@
+<div class='col-md-12'>
+  <h1 class='titulo1'>Tabla Postulaciones</h1>
+</div>
+<div class='col-md-12'>
+  <div id='tabla_postulaciones'></div>
+</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-12'>
+  <h1 class='titulo1'>Tabla solicitud información</h1>
+</div>
+<div class='col-md-12'>
+  <div id='tabla_solicitudes_informacion'></div>
+</div>
+<div class='col-md-12'>&nbsp;</div>
+<div class='col-md-12'>&nbsp;</div>
+
+<div id='div_dump'></div>
+
+<script type='text/javascript'>
+  var postulaciones = JSON.parse(<%= @postulaciones.inspect.html_safe %>);
+
+  postulaciones.unshift(["ID", "NOMBRE DEL PROGRAMA", "CODIGO DEL PROGRAMA", "NOMBRE", "APELLIDO PATERNO", "APELLIDO MATERNO", "CÉDULA DE IDENTIDAD O PASAPORTE", "FECHA DE NACIMIENTO", "LUGAR DE NACIMIENTO", "NACIONALIDAD", "TELÉFONO PARTICULAR", "TELÉFONO CELULAR", "TELÉFONO DE MENSAJES", "CORREO ELECTRÓNICO", "DOMICILIO", "COMUNA", "CIUDAD", "ENTIDAD EDUCACIONAL DONDE OBTUVO SU TÍTULO ANTERIO" ,
+"TÍTULO O GRADO", "PAÍS", "AÑO", "OTRO TÍTULO (SI APLICA)", "PAÍS", "AÑO", "OCUPACIÓN ACTUAL", "DOMICILIO LABORAL", "COMUNA", "CIUDAD", "TELÉFONO LABORAL", "CORREO ELECTRÓNICO", "OBSERVACIONES", "COMO SE ENTERÓ DEL PROGRAMA", "FUENTE DE FINANCIAMIENTO DE ESTUDIOS DE POSTGRADO", "Fecha de entrega de carpeta", "Fecha entrevista", "Estado postulacion", "Estado matricula", "Estado pago arancel", "Observaciones internas"]);
+
+  var solicitudes_informacion = JSON.parse(<%= @solicitudes_informacion.inspect.html_safe %>);
+
+  solicitudes_informacion.unshift([ "ID", "CODIGO DEL PROGRAMA", "NOMBRE DEL PROGRAMA", "NOMBRE", "APELLIDO PATERNO", "APELLIDO MATERNO", "CÉDULA DE IDENTIDAD O PASAPORTE", "CORREO ELECTRÓNICO", "OBSERVACIONES", "COMO SE ENTERÓ DEL PROGRAMA" ]);                                         
+                                           
+  
+</script>

@@ -1,0 +1,10 @@
+<%= simple_form_for(@info_request) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="col-md-8 col-md-offset-2">
+    <%= f.input :internal_commentary, label: "Observacion Interna" %>
+  </div>
+  <div class='col-md-12'>
+    <%= f.button :submit, "Modificar Observación Interna", class: "btn btn-info col-md-6 col-md-offset-3" %>
+  </div>
+<% end %>

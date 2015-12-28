@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  program_id: 
+  name: MyString
+  surname: MyString
+  second_surname: MyString
+  rut: MyString
+  birthdate: 2015-07-27
+  birthplace: MyString
+  nationality: MyString
+  phone: MyString
+  mobile_phone: MyString
+  message_phone: MyString
+  email: MyString
+  address: MyString
+  commune: MyString
+  city: MyString
+  degree_school: MyString
+  degree: MyString
+  degree_country: MyString
+  degree_year: 1
+  other_degree: MyString
+  other_degree_country: MyString
+  other_degree_year: 1
+  occupation: MyString
+  work_address: MyString
+  work_commune: MyString
+  work_city: MyString
+  work_phone: MyString
+  work_email: MyString
+  observations: MyText
+  find_out_id: 
+  financing_id: 
+
+two:
+  program_id: 
+  name: MyString
+  surname: MyString
+  second_surname: MyString
+  rut: MyString
+  birthdate: 2015-07-27
+  birthplace: MyString
+  nationality: MyString
+  phone: MyString
+  mobile_phone: MyString
+  message_phone: MyString
+  email: MyString
+  address: MyString
+  commune: MyString
+  city: MyString
+  degree_school: MyString
+  degree: MyString
+  degree_country: MyString
+  degree_year: 1
+  other_degree: MyString
+  other_degree_country: MyString
+  other_degree_year: 1
+  occupation: MyString
+  work_address: MyString
+  work_commune: MyString
+  work_city: MyString
+  work_phone: MyString
+  work_email: MyString
+  observations: MyText
+  find_out_id: 
+  financing_id: 

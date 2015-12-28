@@ -1,0 +1,207 @@
+<%= simple_form_for(@postulation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class='step-panel' data-step=1>
+      <div class='col-md-12 text-center'>
+        <h4>Para comenzar seleccione el programa al que desea postular</h4>
+      </div>
+      <%= f.association :program, label: "Nombre del programa" %>
+      <button class='pull-right btn btn-success next-step'>Siguiente</button>
+    </div>
+    <div class='step-panel' data-step=2>
+      <%= f.input :rut, label: "Cédula de identidad o pasaporte" %>
+      <%= f.input :name, label: "Nombres" %>
+      <%= f.input :surname, label: "Apellido paterno" %>
+      <%= f.input :second_surname, label: "Apellido materno" %>
+      <%= f.input :birthdate, as: :date, start_year: Date.today.year - 5, end_year: Date.today.year - 100, label: "Fecha de nacimiento", :include_blank => true %>
+<!--      <%= f.input :birthplace, label: "Lugar de nacimiento" %>-->
+      <%= f.input :nationality, label: "Nacionalidad" %>
+      <%= f.input :phone, label: "Fono de contacto" %>
+      <%= f.input :mobile_phone, label: "Fono celular" %>
+<!--      <%= f.input :message_phone, label: "Teléfono de mensajes" %>-->
+      <%= f.input :email, label: "Correo electrónico" %>
+      <%= f.input :address, label: "Domicilio" %>
+      <%= f.input :commune, label: "Comuna" %>
+      <%= f.input :city, label: "Ciudad" %>
+      <button class='pull-left btn btn-danger last-step'>Anterior</button>
+      <button class='pull-right btn btn-success next-step'>Siguiente</button>
+    </div>
+    <div class='step-panel' data-step=3>
+      <%= f.input :degree, label: "Títulos profesionales y/o grados academicos" %>
+      <%= f.input :degree_school, label: "Entidad educacional donde sus titulos profesionales o grados académicos" %>
+      <%= f.input :degree_country, as: :string, label: "País donde obtuvo sus títulos profesionales o grados académicos" %>
+      <%= f.input :degree_year, label: "Año de obtención del título profesional o grado académico" %>
+<!--      <%= f.input :other_degree, label: "Otro título (si aplica)" %>-->
+<!--      <%= f.input :other_degree_country, as: :string, label: "País" %>-->
+<!--      <%= f.input :other_degree_year, label: "Año" %>-->
+      <%= f.input :occupation, label: "Ocupación actual" %>
+<!--      <%= f.input :work_address, label: "Domicilio laboral" %>-->
+<!--      <%= f.input :work_commune, label: "Comuna" %>-->
+<!--      <%= f.input :work_city, label: "Ciudad" %>-->
+<!--      <%= f.input :work_phone, label: "Teléfono laboral" %>-->
+<!--      <%= f.input :work_email, label: "Correo electronico" %>-->
+      <button class='pull-left btn btn-danger last-step'>Anterior</button>
+      <button class='pull-right btn btn-success next-step'>Siguiente</button>
+    </div>
+    <div class='step-panel' data-step=4>
+      <%= f.association :find_outs, label: "¿Como se enteró del programa?", input_html: {multiple: true, class: 'chosen-select', 'data-placeholder': '¿Como te enteraste?, click aquí'} %>
+      <%= f.input :find_out_other, label: "Especifique donde se enteró.", wrapper_html: { class: 'find_out_wrapper' } %>
+      <%= f.association :financing, label: "Fuente de financiamiento de estudios" %>
+      <%= f.input :no_continuation, :collection => [['Si', true], ['No', false]], as: :radio_buttons, label: "En caso que la beca no sea adjudicada ¿continúa con la postulación?", wrapper_html: { class: 'no_continuation_wrapper' } %>
+      <%= f.input :observations, label: "Ingrese comentarios u observaciones (si amerita)" %>
+      <button class='pull-left btn btn-danger last-step'>Anterior</button>
+      <button class='pull-right btn btn-success next-step'>Siguiente</button>
+    </div>
+    <div class='step-panel' data-step=5>
+      <%= f.input :cv, as: :file, label: "Currículum vitae (obligatorio)"  %>
+      <%= f.input :picture, as: :file, label: "Fotografía digital de 3x4 cms" %>
+      <%= f.input :degree_1, as: :file, label: "Título o grado académico"  %>
+<!--      <%= f.input :degree_2, as: :file, label: "Título o grado académico 2"   %>-->
+      <%= f.input :postulation_tab, as: :file, label: "Ficha de postulación firmada (obligatoria)"  %>
+      <%= f.input :inscription_receip, as: :file, label: "Comprobante de pago de arancel de inscripción (obligatorio)"  %>
+<!--      <%= f.input :intention_letter, as: :file, label: "Cédula de identidad o pasaporte digitalizado por ambos lados (obligatorio)"  %>-->
+      <%= f.input :ci, as: :file, label: "Cédula de identidad o pasaporte digitalizado por ambos lados (obligatorio)"  %>
+      <%= f.input :recommendation_letter_1, as: :file, label: "Carta de recomendación"  %>
+<!--      <%= f.input :recommendation_letter_2, as: :file, label: "Carta de recomendación 2"  %>-->
+      <%= f.input :tesis_proposal, as: :file, label: "Pre proyecto / anteproyecto / propuesta de trabajo de tesis" %>
+      <%= f.input :interest_declaration, as: :file, label: "Declaración de intereses o de propósitos y objetivos que desea alcanzar a través del programa"  %>
+      <button class='pull-left btn btn-danger last-step'>Anterior</button>
+      <button class='pull-right btn btn-success next-step'>Siguiente</button>
+    </div>
+    <div class='step-panel' data-step=6>
+      <div class='col-md-12 tabla-final'>
+        <table class='table'>
+          <thead>
+            <th colspan=2 class='text-center'> Resumen postulación </th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Programa:</th>
+              <td id='table_program'></td>
+            </tr>
+            <tr>
+              <th>Cédula de identidad o pasaporte:</th>
+              <td id='table_postulation_rut'></td>
+            </tr>
+            <tr>
+              <th>Nombres:</th>
+              <td id='table_postulation_name'></td>
+            </tr>
+            <tr>
+              <th>Apellido paterno:</th>
+              <td id='table_postulation_surname'></td>
+            </tr>
+            <tr>
+              <th>Apellido materno:</th>
+              <td id='table_postulation_second_surname'></td>
+            </tr>
+            <tr>
+              <th>Nacionalidad:</th>
+              <td id='table_postulation_nationality'></td>
+            </tr>
+            <tr>
+              <th>Fono de contacto:</th>
+              <td id='table_postulation_phone'></td>
+            </tr>
+            <tr>
+              <th>Fono celular:</th>
+              <td id='table_postulation_mobile_phone'></td>
+            </tr>
+            <tr>
+              <th>Correo electronico:</th>
+              <td id='table_postulation_email'></td>
+            </tr>
+            <tr>
+              <th>Domicilio:</th>
+              <td id='table_postulation_address'></td>
+            </tr>
+            <tr>
+              <th>Comuna:</th>
+              <td id='table_postulation_commune'></td>
+            </tr>
+            <tr>
+              <th>Ciudad:</th>
+              <td id='table_postulation_city'></td>
+            </tr>
+            <tr>
+              <th>Títulos profesionales y/o grados académicos:</th>
+              <td id='table_postulation_degree'></td>
+            </tr>
+            <tr>
+              <th>Entidad educacional donde obtuvo<br />sus títulos profesionales <br /> o grados académicos:</th>
+              <td id='table_postulation_degree_school'></td>
+            </tr>
+            <tr>
+              <th>Año de obtención del título <br />profesional o grado académico:</th>
+              <td id='table_postulation_degree_year'></td>
+            </tr>
+            <tr>
+              <th>Ocupación actual:</th>
+              <td id='table_postulation_occupation'></td>
+            </tr>
+            <tr>
+              <th>Currículum vitae</th>
+              <td id='table_postulation_cv'></td>
+            </tr>
+            <tr>
+              <th>Fotografía digital de 3x4 cms</th>
+              <td id='table_postulation_picture'></td>
+            </tr>
+            <tr>
+              <th>Título o grado académico</th>
+              <td id='table_postulation_degree_1'></td>
+            </tr>
+            <tr>
+              <th>Ficha de postulación firmada</th>
+              <td id='table_postulation_postulation_tab'></td>
+            </tr>
+            <tr>
+              <th>Comprobante de pago de arancel de inscripción</th>
+              <td id='table_postulation_inscription_receip'></td>
+            </tr>
+            <tr>
+              <th>Cédula de identidad o pasaporte digitalizado por ambos lados</th>
+              <td id='table_postulation_ci'></td>
+            </tr>
+            <tr>
+              <th>Carta de recomendación</th>
+              <td id='table_postulation_recommendation_letter_1'></td>
+            </tr>
+            <tr>
+              <th>Pre proyecto / anteproyecto / propuesta de trabajo de tesis</th>
+              <td id='table_postulation_tesis_proposal'></td>
+            </tr>
+            <tr>
+              <th>Declaración de intereses o de propósitos y objetivos que desea alcanzar a través del programa</th>
+              <td id='table_postulation_interest_declaration'></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class='col-md-12'>
+        <%= f.button :submit, "Enviar postulación", class: 'btn btn-info col-md-6 col-md-offset-3' %>
+      </div>
+      <div class='spacer50'></div>
+      <div class='spacer50'></div>
+      <div class='spacer50'></div>
+        <button class='pull-left btn btn-danger last-step'>Anterior</button>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-validation" tabindex="-1" role="dialog" aria-labelledby="modal-validation">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Error de validación</h4>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Los campos en rojo son obligatorios.</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

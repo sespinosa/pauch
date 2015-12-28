@@ -1,0 +1,90 @@
+// Place all the styles related to the postulations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-block {
+  margin-bottom: 20px;
+  border: 1px solid #bdd5dd;
+  padding: 5px;
+  border-radius: 10px;
+}
+.user-block div {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.postulation_birthdate label{
+  display: block;
+}
+
+.postulation_birthdate select{
+  display: inline-block;
+  width: 30%;
+  margin-right: 5px;
+}
+
+.postulation_folder_delivery label{
+  display: block;
+}
+
+.postulation_folder_delivery select{
+  display: inline-block;
+  width: 30%;
+  margin-right: 5px;
+}
+
+.postulation_interview label{
+  display: block;
+}
+
+.postulation_interview select{
+  display: inline-block;
+  width: 30%;
+  margin-right: 5px;
+}
+
+.botones-formularios {
+  margin-top: 30px;
+}
+
+#banner-postgrado {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.btn-azul {
+  color: #ffffff !important;
+  background-color: #25a7d3;
+  border-color: #358caa;
+}
+
+.btn-azul:hover {
+  color: #ffffff !important;
+  background-color: #358caa;
+  border-color: #3b7b91;
+}
+
+.btn-rosado {
+  color: #ffffff !important;
+  background-color: #ec008c;
+  border-color: #b12f7c;
+}
+
+.btn-rosado:hover {
+  color: #ffffff !important;
+  background-color: #b12f7c;
+  border-color: #8b3a6a;
+}
+
+.titulo1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.dataTable td {
+  font-size: 13px;
+}

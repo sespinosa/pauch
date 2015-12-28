@@ -1,0 +1,37 @@
+<%= simple_form_for(@info_request) do |f| %>
+
+  <div class="col-md-8 col-md-offset-2">
+    <%= f.association :program, label: "Nombre del programa" %>
+    <%= f.input :name, label: "Nombre" %>
+    <%= f.input :surname, label: "Apellido paterno" %>
+    <%= f.input :second_surname, label: "Apellido materno" %>
+    <%= f.input :contact_phone, label: "Fono de contacto" %>
+    <%= f.input :rut, label: "Cédula de identidad o pasaporte" %>
+    <%= f.input :email, label: "Correo electronico" %>
+    <%= f.input :observations, label: "Consulta" %>
+    <%= f.association :find_outs, label: "¿Como se enteró del programa?", input_html: {multiple: true, class: 'chosen-select', 'data-placeholder': '¿Como te enteraste?, click aquí'} %>
+    <%= f.input :find_out_other, label: "Especifique donde se enteró.", wrapper_html: { class: 'find_out_wrapper' } %>
+  </div>
+
+  <div class='col-md-12'>&nbsp;</div>
+  <div class="col-md-5 col-md-offset-5">
+    <%= f.button :submit, "Solicitar información" %>
+  </div>
+<% end %>
+
+<div class="modal fade" id="modal-validation" tabindex="-1" role="dialog" aria-labelledby="modal-validation">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Error de validación</h4>
+        </div>
+        <div class="modal-body text-center">
+          <h4>Los campos en rojo son obligatorios.</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

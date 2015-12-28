@@ -1,0 +1,215 @@
+<div class='col-md-12'>
+  <h4> Programa: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.program.try(:name) %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Nombre: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.name %>
+</div>
+
+<div class='col-md-12'>
+  <h4> Apellido: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.surname %>
+</div>
+<div class='col-md-12'>
+  <h4> Segundo apellido </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.second_surname %>
+</div>
+<div class='col-md-12'>
+  <h4> Rut: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.rut %>
+</div>
+<div class='col-md-12'>
+  <h4> Fecha de nacimiento: </h4>
+</div>
+<div class='col-md-12'>
+  <%= l(@postulation.birthdate) if @postulation.birthdate %>
+</div>
+<div class='col-md-12'>
+  <h4> Lugar de nacimiento: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.birthplace %>
+</div>
+<div class='col-md-12'>
+  <h4> Nacionalidad: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.nationality %>
+</div>
+<div class='col-md-12'>
+  <h4> Telefono: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.phone %>
+</div>
+<div class='col-md-12'>
+  <h4> Telefono movil: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.mobile_phone %>
+</div>
+<div class='col-md-12'>
+  <h4> Telefono para mensajes: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.message_phone %>
+</div>
+<div class='col-md-12'>
+  <h4> Correo electronico: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.email %>
+</div>
+<div class='col-md-12'>
+  <h4> Dirección: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.address %>
+</div>
+<div class='col-md-12'>
+  <h4> Comuna: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.commune %>
+</div>
+<div class='col-md-12'>
+  <h4> Ciudad: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.city %>
+</div>
+<div class='col-md-12'>
+  <h4> Entidad educacional donde obtuvo su título anterior: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.degree_school %>
+</div>
+<div class='col-md-12'>
+  <h4> Titulo o grado: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.degree %>
+</div>
+<div class='col-md-12'>
+  <h4> País (título):</h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.degree_country %>
+</div>
+<div class='col-md-12'>
+  <h4> Año de títulacion: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.degree_year %>
+</div>
+<div class='col-md-12'>
+  <h4> Otro grado:</h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.other_degree %>
+</div>
+<div class='col-md-12'>
+  <h4> País (otro grado):</h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.other_degree_country %>
+</div>
+<div class='col-md-12'>
+  <h4> Año (otro grado): </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.other_degree_year %>
+</div>
+<div class='col-md-12'>
+  <h4> Ocupación: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.occupation %>
+</div>
+<div class='col-md-12'>
+  <h4> Domicilio laboral: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.work_address %>
+</div>
+<div class='col-md-12'>
+  <h4> Comuna laboral: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.work_commune %>
+</div>
+<div class='col-md-12'>
+  <h4> Ciudad laboral: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.work_city %>
+</div>
+<div class='col-md-12'>
+  <h4> Telefono laboral: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.work_phone %>
+</div>
+<div class='col-md-12'>
+  <h4> Correo electronico laboral: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.work_email %>
+</div>
+<div class='col-md-12'>
+  <h4> Observaciones: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.observations %>
+</div>
+<div class='col-md-12'>
+  <h4> Como se enteró del programa: </h4>
+</div>
+<div class='col-md-12'>
+  <% @postulation.find_outs.map do |fo| %>
+  <div class='col-md-12'><%= fo.try(:name) %></div>
+  <% end %>
+</div>
+<div class='col-md-12'>
+  <h4> Como se enteró (otro): </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.find_out_other %>
+</div>
+<div class='col-md-12'>
+  <h4> Financiamiento: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.financing.try(:name) %>
+</div>
+<% if !@postulation.no_continuation.nil? %>
+<div class='col-md-12'>
+  <h4> ¿Continúa con la postulación?: </h4>
+</div>
+<div class='col-md-12'>
+  <%= @postulation.no_continuation ? "Si" : "No" %>
+</div>
+<% else %>
+<div class='col-md-12'>
+  <h4> ¿Continúa con la postulación?: </h4>
+</div>
+<div class='col-md-12'>
+ No aplica
+</div>
+<% end %>
+<!--
+<%= link_to 'Edit', edit_postulation_path(@postulation) %> |
+<%= link_to 'Back', postulations_path %>
+-->

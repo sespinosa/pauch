@@ -1,0 +1,41 @@
+<div class='col-md-12 col-sm-12'>
+  <h1 class='titulo1'>Postulaciones</h1>
+  <% if current_user %>
+    <% if current_user.has_role? :admin %>
+  <h3>EP: Estado postulación | EC: Entrega carpeta | FE: Fecha entrevista | EM: Estado matricula | EPA: Estado pago arancel | OI: Observación interna</h3>
+    <% end %>
+    <% if current_user.has_any_role? :admin, :descarga %>
+  <a class='btn btn-success pull-right' href='/postulations/data_dump' style='color: white;'>Ver volcado de datos</a>
+    <% end %>
+  <table class='table table-bordered' id="postulations-table" data-source="<%= postulations_path(format: :json) %>">
+    <thead>
+      <tr>
+        <% if current_user.has_any_role? :admin, :acceso %>
+        <th>Programa</th>
+        <% end %>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rut</th>
+        <% if current_user.has_any_role? :admin, :acceso %>
+        <th>Comentarios</th>
+        <th>Como se entero</th>
+        <% end %>
+        <% if current_user.has_role? :admin %>
+          <th>EP</th>
+          <th>EC</th>
+          <th>FE</th>
+          <th>EM</th>
+          <th>EPA</th>
+          <th>OI</th>
+        <% end %>
+        <% if current_user.has_role? :acceso %>
+          <th>Ultima modificación</th>
+        <% end %>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <% end %>
+</div>
